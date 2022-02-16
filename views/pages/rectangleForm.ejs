@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>AddRectangle</title>
+      <link rel="stylesheet" href="./stylesheets/Rectangles.css">
+  </head>
+  <body>
+    <%- include ("../partials/rectanglesNav.ejs") %>
+
+    <h1>Add a rectangle</h1>
+    <form class="" action="/addRectangle" method="post">
+      <input type="text" name="name" value="" placeholder="Name">
+      <input type="number" name="height" value="" placeholder="Height">
+      <input type="number" name="width" value="" placeholder="Width">
+      <input type="text" name="color" value="" placeholder="Color">
+      <input type="submit" name="sub" value="Submit">
+    </form>
+  </body>
+</html

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>A Rectangle</title>
+  <link rel="stylesheet" type="text/css" href="./stylesheets/Rectangles.css">
+  </head>
+  <body>
+      <%- include ("../partials/rectanglesNav.ejs") %>
+    <table class="table">
+      <form class="" action="/updateRectangle" method="post">
+        <tr>
+          <th>Name</th>
+          <td> <input type="text" name="rname" value="<%=rectangle[0].name%>"> </td>
+        </tr>
+        <tr>
+          <th>Height</th>
+          <td> <input type="number" name="height" value="<%=rectangle[0].height%>"> </td>
+        </tr>
+        <tr>
+          <th>Width</th>
+          <td> <input type="number" name="width" value="<%=rectangle[0].width%>"> </td>
+        </tr>
+        <tr>
+          <th>Color</th>
+          <td> <input type="text" name="color" value="<%=rectangle[0].color%>"> </td>
+        </tr>
+        <tr>
+          <th>Area</th>
+          <% var area = rectangle[0].height * rectangle[0].width%>
+          <td> <%=area%> </td>
+        </tr>
+        <tr id="updateRectangle">
+          <td> <input type="submit" name="update" value="Delete Rectangle"> </td>
+          <td> <input type="submit" name="update" value="Update Rectangle"> </td>
+        </tr>
+        <input style="display:none;" type="number" name="id" value="<%=rectangle[0].id%>">
+      </form>
+
+
+    </table>
+    <p style="height:<%=rectangle[0].height%>px; width:<%=rectangle[0].width%>px; background-color:<%=rectangle[0].color%>"><%=rectangle[0].name%></p>
+  </body>
+
+</html>

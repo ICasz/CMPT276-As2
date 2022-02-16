@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Rectangles App</title>
+  </head>
+  <body>
+    <%- include ("../partials/rectanglesNav.ejs") %>
+    <h1>Rectangles</h1>
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <!-- <th>Height</th>
+        <th>Width</th> -->
+        <th>Color</th>
+      </tr>
+      <% rows.forEach(function(r) { %>
+        <tr>
+          <td><a href="/pages/<%= r.id %>"><%= r.name %></a></td>
+          <!-- <td><%= r.height %></td>
+          <td><%= r.width %></td> -->
+          <td><%= r.color %></td>
+        </tr>
+      <% }); %>
+
+    </table>
+  </body>
+  <link rel="stylesheet" href="./stylesheets/Rectangles.css">
+</html>
