@@ -7,7 +7,7 @@ var pool;
 pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
-    rejectUnauthorized: false;
+    rejectUnauthorized: false
   }
 });
 console.log(precess.env.DATABASE_URL);
