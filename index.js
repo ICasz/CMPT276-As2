@@ -10,6 +10,7 @@ pool = new Pool({
     rejectUnauthorized: false;
   }
 });
+console.log(precess.env.DATABASE_URL);
 
  var app = express()
   app.use(express.json());
