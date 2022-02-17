@@ -5,9 +5,11 @@ const PORT = process.env.PORT || 5000
 const { Pool } = require('pg');
 var pool;
 pool = new Pool({
-  // connectionString: 'postgres://postgres:root@localhost/assignment2'
   connectionString: process.env.DATABASE_URL
-})
+  ssl: {
+    rejectUnauthorized: false;
+  }
+});
 
  var app = express()
   app.use(express.json());
@@ -25,9 +27,7 @@ pool = new Pool({
         res.end(error);
       }
       else {
-        // console.log(result);
         var results = {'rows': result.rows}
-        //console.log(results.rows[0].name);
         res.render('pages/rectanglesTable', results);
       }
     })
