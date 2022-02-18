@@ -3,7 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>A Rectangle</title>
-  <link rel="stylesheet" type="text/css" href="./stylesheets/Rectangles.css">
+  <style>
+  html {
+    background-color: #b3e5fc
+  }
+  .updateRectangle {
+    background-color: #DCDCDC;
+    font-weight: bolder;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  </style>
   </head>
   <body>
       <%- include ("../partials/rectanglesNav.ejs") %>
@@ -30,16 +40,14 @@
           <% var area = rectangle[0].height * rectangle[0].width%>
           <td> <%=area%> </td>
         </tr>
-        <tr id="updateRectangle">
-          <td> <input type="submit" name="update" value="Delete Rectangle"> </td>
-          <td> <input type="submit" name="update" value="Update Rectangle"> </td>
+        <tr>
+          <td> <input class="updateRectangle" type="submit" name="update" value="Delete Rectangle"> </td>
+          <td> <input class="updateRectangle" type="submit"  name="update" value="Update Rectangle"> </td>
         </tr>
         <input style="display:none;" type="number" name="id" value="<%=rectangle[0].id%>">
       </form>
-
-
     </table>
-    <p style="height:<%=rectangle[0].height%>px; width:<%=rectangle[0].width%>px; background-color:<%=rectangle[0].color%>"><%=rectangle[0].name%></p>
+    <p style="height:<%=rectangle[0].height%>px; width:<%=rectangle[0].width%>px; background-color:<%=rectangle[0].color%>; border:1px solid black;"><%=rectangle[0].name%></p>
   </body>
 
 </html>

@@ -9,8 +9,7 @@ pool = new Pool({
   ssl: {
     rejectUnauthorized: false
   }
-});
-console.log(process.env.DATABASE_URL);
+})
 
  var app = express()
   app.use(express.json());
@@ -49,7 +48,7 @@ console.log(process.env.DATABASE_URL);
         res.end(error)
       }
       else {
-        res.render('pages/rectangleForm');
+        res.redirect('database');
       }
     });
   });
@@ -57,7 +56,6 @@ console.log(process.env.DATABASE_URL);
 app.get('/pages/:id', (req, res) => {
   var id = req.params.id;
   var getRectanglesQuery = `select * from rectangles where id=${id};`
-  // console.log(getRectanglesQuery);
   pool.query(getRectanglesQuery, (error, result) => {
     if (error){
       res.end(error);
@@ -67,7 +65,6 @@ app.get('/pages/:id', (req, res) => {
       res.render('pages/rectangle', results);
     }
   })
-  // console.log(id);
 });
 
 app.post('/updateRectangle', (req,res) => {
@@ -101,21 +98,6 @@ app.post('/updateRectangle', (req,res) => {
     });
   }
 });
-
-  // app.post('/goToRectangle', (req, res) => {
-  //   console.log("Rectangle request sent!");
-  //   var name = req.body.name;
-  //   var getRectanglesQuery = `Select * from rectangles where name=${name};`
-  //   pool.query(getRectanglesQuery (error, result) => {
-  //     if (error) {
-  //       res.send(error);
-  //     }
-  //     else {
-  //       var results = {rectangle : result.collums}
-  //       res.render(pages.aRectangle.ejs, results)
-  //     }
-  //   })
-  // });
 
   app.use((req, res) => {
     res.status(404).render('pages/404')

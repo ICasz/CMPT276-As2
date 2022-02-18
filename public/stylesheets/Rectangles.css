@@ -1,24 +1,24 @@
+html {
+  background-color: #b3e5fc
+}
+
 body {
   width: 90%;
   margin: 20px;
 }
 
 table,th,td {
+  background-color: white;
   table-layout: fixed;
   width: 30%;
   border: 1px solid black;
   border-collapse: collapse;
   margin-bottom: 10px;
 }
-/*
-.table{
-  table-layout: fixed;
-  width: 50%;
-  border: 1px solid black;
-  border-collapse: collapse;
-  margin-bottom: 10px;
-} */
 
+table {
+  border-radius: 10px;
+}
 
 th {
   background-color: #DCDCDC;
@@ -28,10 +28,14 @@ th, td {
   padding: 10px;
 }
 
-#updateRectangle {
-  width: 100%;
+.form {
+  margin:2px;
+  border-radius: 5px;
+  padding: 10px;
 }
 
-.recNav {
-  display: inline;
+#submit {
+  background-color: #DCDCDC;
+  font-weight: bolder;
+  width: 100px;
 }

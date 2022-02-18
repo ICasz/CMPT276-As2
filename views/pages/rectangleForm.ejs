@@ -9,12 +9,12 @@
     <%- include ("../partials/rectanglesNav.ejs") %>
 
     <h1>Add a rectangle</h1>
-    <form class="" action="/addRectangle" method="post">
-      <input type="text" name="name" value="" placeholder="Name">
-      <input type="number" name="height" value="" placeholder="Height">
-      <input type="number" name="width" value="" placeholder="Width">
-      <input type="text" name="color" value="" placeholder="Color">
-      <input type="submit" name="sub" value="Submit">
+    <form class="addRectangle" action="/addRectangle" method="post">
+      <input class="form" type="text" name="name" value="" placeholder="Name"> <br>
+      <input class="form" type="number" name="height" value="" placeholder="Height"> <br>
+      <input class="form" type="number" name="width" value="" placeholder="Width"> <br>
+      <input class="form" type="text" name="color" value="" placeholder="Color"><br>
+      <input class="form" id="submit" type="submit" name="sub" value="Submit">
     </form>
   </body>
 </html

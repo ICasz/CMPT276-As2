@@ -10,19 +10,14 @@
     <table class="table">
       <tr>
         <th>Name</th>
-        <!-- <th>Height</th>
-        <th>Width</th> -->
         <th>Color</th>
       </tr>
       <% rows.forEach(function(r) { %>
         <tr>
           <td><a href="/pages/<%= r.id %>"><%= r.name %></a></td>
-          <!-- <td><%= r.height %></td>
-          <td><%= r.width %></td> -->
           <td><%= r.color %></td>
         </tr>
       <% }); %>
-
     </table>
   </body>
   <link rel="stylesheet" href="./stylesheets/Rectangles.css">
